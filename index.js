@@ -154,7 +154,6 @@ function run(code=[]) {
 
 function main(file=process.argv[2]) {
 	let code = fs.readFileSync(file, "utf-8");
-	//console.log(code.split("\n"));
 	run(code.split("\n"));
 }
 
