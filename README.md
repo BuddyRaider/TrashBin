@@ -10,6 +10,15 @@
 	- "run.sh *filename*". (Only For Unix-Based Systems)
 ***
 ## Code Docs
-#### TrashBin has a basic "*instruction* *parameters*" syntax (Only one instruction per line), making it easy to read, and requiring fewer lines of code to parse.
+#### TrashBin has a basic "*instruction* *parameter(s)*" syntax (Only one instruction per line), making it easy to read, and requiring fewer lines of code to parse.
+#### Commands in Binary can be written with any number of bytes, as long as the represented binary number is the same, i.e. `0001` is the same as `1`, and `0011` is the same as `11`.
 #### Here are the commands so far:
-*Work in Progress*
+`0 *anything*`: Comment\
+`0001 *plain text*`: Prints Raw Text\
+`0010 *binary number*`: Converts The Binary To Base 10 And Prints It.\
+`0011 *binary number*`: Converts The Binary To Ascii And Prints It.\
+`0100 *base 10 number*`: Converts The Number To Binary And Prints It.\
+`0101 *Ascii text*`: Converts The Ascii To Binary And Prints It.\
+`0111 *variable name*`: Prints Variable Value.\
+`1000 *variable name* *plain text*`: Creates Variable With Raw Text.\
+`1001`

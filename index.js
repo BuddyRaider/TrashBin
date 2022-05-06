@@ -29,7 +29,7 @@ function run(code=[]) {
 	codeLen = code.length;
 	for (let i=0; i<codeLen; i++) {
 		code[i] = code[i].trim();
-		if (!code[i]) {
+		if (!code[i] || code[i].startsWith("~")) {
 			continue;
 		}
 		let instruction = fromBin(code[i].split(" ")[0]);
