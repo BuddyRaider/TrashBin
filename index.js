@@ -40,7 +40,11 @@ function run(code=[]) {
 				console.log(data);
 				break;
 			case 2:
-				output = fromBin(data);
+				output = "";
+				data = data.split(" ");
+				for (let j=0; j<data.length; j++) {
+					output += fromBin(data[j]);
+				}
 				console.log(output);
 				break;
 			case 3:
@@ -51,6 +55,12 @@ function run(code=[]) {
 				}
 				console.log(output);
 				break;
+			case 4:
+				output = "";
+				data = data.split(" ");
+				for (let j=0; j<data.length; j++) {
+					output += String.fromCharCode(fromBin(data[j]));
+				}
 			default:
 				console.error("Error: Unexpexted Instruction, Line " + (i + 1));
 		}
