@@ -1,2 +1,3 @@
-# ignore
-run="node index.js"
+### For Replit.com Run Button vvv
+# Specify TrashBin (".tb") File After "run.sh"
+run="run.sh example.tb"
