@@ -1,4 +1,4 @@
-num = 100;
+const fs = require("fs");
 
 function toBin(x) {
 	x = parseInt(x);
@@ -35,7 +35,7 @@ function run(code=[]) {
 		let instruction = fromBin(code[i].split(" ")[0]);
 		switch (instruction) {
 			case 1:
-				console.log(code[i].split(" ").slice(1));
+				console.log(code[i].split(" ").slice(1).join(" "));
 				break;
 			default:
 				console.error("Error: Unexpexted Instruction, Line " + (i + 1));
@@ -43,4 +43,10 @@ function run(code=[]) {
 	}
 }
 
-function main(file=process.argv[2])
+function main(file=process.argv[2]) {
+	let code = fs.readFileSync(file, "utf-8");
+	//console.log(code.split("\n"));
+	run(code.split("\n"));
+}
+
+main();
