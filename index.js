@@ -126,6 +126,14 @@ function run(code=[]) {
 				}
 				codeVars[dataVar] = output.join(" ");
 				break;
+			case 13:
+				data = data.split(" ");
+				if (data[1] in codeVars) {
+					codeVars[data[0]] = codeVars[data[1]];
+				} else {
+					process.stdout.write("Error: Undefined Variable, Line " + (i + 1));
+				}
+				break;
 			default:
 				process.stdout.write("Error: Unexpexted Instruction, Line " + (i + 1));
 		}
