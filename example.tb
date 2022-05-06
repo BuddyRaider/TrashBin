@@ -6,3 +6,4 @@
 1111 test
 ~ should give undefined error because it is gone now:
 0110 test
+~ view README.md for all instructions
