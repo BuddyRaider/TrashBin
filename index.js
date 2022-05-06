@@ -27,7 +27,7 @@ function fromBin(x) {
 
 function run(code=[]) {
 	codeLen = code.length;
-	let codeVars = {};
+	let codeVars = {"test": 213};
 	for (let i=0; i<codeLen; i++) {
 		code[i] = code[i].trim();
 		if (!code[i] || code[i].startsWith("~")) {
@@ -71,6 +71,14 @@ function run(code=[]) {
 					output += toBin(data[j].charCodeAt(0)) + " ";
 				}
 				process.stdout.write(output);
+				break;
+			case 6:
+				console.log("jdasfjkldjsakfeohgawgaesdgaerawgdg")
+				if (data in codeVars) {
+					process.stdout.write(codeVars[data]);
+				} else {
+					process.stdout.write("Error: Undefined Variable, Line " + (i + 1));
+				}
 				break;
 			default:
 				process.stdout.write("Error: Unexpexted Instruction, Line " + (i + 1));

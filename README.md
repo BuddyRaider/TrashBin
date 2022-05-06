@@ -20,7 +20,8 @@
 `0011 *binary number*`: Converts The Binary To Ascii And Prints It.\
 `0100 *base 10 number*`: Converts The Number To Binary And Prints It.\
 `0101 *Ascii text*`: Converts The Ascii To Binary And Prints It.\
-`0111 *variable name*`: Prints Variable Value.\
+`0110 *variable name*`: Prints Variable Value.\
+`0111 *filename*`: Prints File Contents (Not Available Yet).\
 `1000 *variable name* *plain text*`: Creates Variable With Raw Text.\
 `1001 *variable name* *binary number*`: Converts The Binary To Base 10 And Stores It In Variable.\
 `1011 *variable name* *binary number*`: Converts The Binary To Ascii And Stores It In Variable.\
