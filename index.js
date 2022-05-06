@@ -33,9 +33,18 @@ function run(code=[]) {
 			continue;
 		}
 		let instruction = fromBin(code[i].split(" ")[0]);
+		let output = "";
 		switch (instruction) {
 			case 1:
 				console.log(code[i].split(" ").slice(1).join(" "));
+				break;
+			case 2:
+				output = fromBin(code[i].split(" ").slice(1).join(" "));
+				console.log(output);
+				break;
+			case 3:
+				output = new Buffer(code[i].split(" ").slice(1).join(" "), "binary").toString("uft8");
+				console.log(output);
 				break;
 			default:
 				console.error("Error: Unexpexted Instruction, Line " + (i + 1));
