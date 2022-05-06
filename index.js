@@ -1,4 +1,9 @@
 const fs = require("fs");
+const readline = require("readline");
+const rl = readline.createInterface({
+	input: process.stdin,
+	output: process.stdout
+});
 
 function toBin(x) {
 	x = parseInt(x);
@@ -80,7 +85,7 @@ function run(code=[]) {
 				}
 				break;
 			case 7:
-				// read+print file
+				process.stdout.write(fs.readFileSync(data, "utf-8"));
 				break;
 			case 8:
 				data = data.split(" ");
@@ -133,6 +138,13 @@ function run(code=[]) {
 				} else {
 					process.stdout.write("Error: Undefined Variable, Line " + (i + 1));
 				}
+				break;
+			case 14:
+				data = data.split(" ");
+				codeVars[data[0]] = fs.readFileSync(data.slice(1).join(" "), "utf-8");
+				break;
+			case 15:
+				delete codeVars[data];
 				break;
 			default:
 				process.stdout.write("Error: Unexpexted Instruction, Line " + (i + 1));

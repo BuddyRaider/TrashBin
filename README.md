@@ -22,10 +22,12 @@
 `0100 *base 10 number*`: Converts The Number To Binary And Prints It.\
 `0101 *Ascii text*`: Converts The Ascii To Binary And Prints It.\
 `0110 *variable name*`: Prints Variable Value.\
-`0111 *filename*`: Prints File Contents (Not Available Yet).\
+`0111 *filename*`: Prints File Contents.\
 `1000 *variable name* *plain text*`: Creates Variable With Raw Text.\
 `1001 *variable name* *binary number*`: Converts The Binary To Base 10 And Stores It In Variable.\
 `1010 *variable name* *binary number*`: Converts The Binary To Ascii And Stores It In Variable.\
 `1011 *variable name* *base 10 number*`: Converts The Number To Binary And Stores It In Variable.\
 `1100 *variable name* *Ascii text*`: Converts The Ascii To Binary And Stores It In Variable.\
-`1101 *variable name* *variable name*`: Creates Copy Of Existing Variable.
+`1101 *variable name* *variable name*`: Creates Copy Of Existing Variable.\
+`1110 *variable name* *filename*`: Stores File Contents In Variable.\
+`1111 *variable name*`: Delete Variable.
