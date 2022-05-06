@@ -3,6 +3,7 @@
 #### A Psuedo-Bytecode Programming Language By BuddyRaider
 ***
 ## Usage
+###### *Requires Node.js*
 - Create a file preferrably ending in ".tb" (TrashBin).
 - Write your TrashBin code in this new file.
 - Then run either of the following:
@@ -24,7 +25,7 @@
 `0111 *filename*`: Prints File Contents (Not Available Yet).\
 `1000 *variable name* *plain text*`: Creates Variable With Raw Text.\
 `1001 *variable name* *binary number*`: Converts The Binary To Base 10 And Stores It In Variable.\
-`1011 *variable name* *binary number*`: Converts The Binary To Ascii And Stores It In Variable.\
-`1100 *variable name* *base 10 number*`: Converts The Number To Binary And Stores It In Variable.\
-`1101 *variable name* *Ascii text*`: Converts The Ascii To Binary And Stores It In Variable.\
-`1111 *variable name* *variable name*`: Creates Copy Of Existing Variable.
+`1010 *variable name* *binary number*`: Converts The Binary To Ascii And Stores It In Variable.\
+`1011 *variable name* *base 10 number*`: Converts The Number To Binary And Stores It In Variable.\
+`1100 *variable name* *Ascii text*`: Converts The Ascii To Binary And Stores It In Variable.\
+`1101 *variable name* *variable name*`: Creates Copy Of Existing Variable.

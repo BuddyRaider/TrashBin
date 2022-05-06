@@ -41,44 +41,90 @@ function run(code=[]) {
 				process.stdout.write(data);
 				break;
 			case 2:
-				output = "";
+				output = [];
 				data = data.split(" ");
 				for (let j=0; j<data.length; j++) {
-					output += fromBin(data[j]);
+					output.push(fromBin(data[j]));
 				}
-				process.stdout.write(output);
+				process.stdout.write(output.join(" "));
 				break;
 			case 3:
-				output = "";
+				output = [];
 				data = data.split(" ");
 				for (let j=0; j<data.length; j++) {
-					output += String.fromCharCode(fromBin(data[j]));
+					output.push(String.fromCharCode(fromBin(data[j])));
 				}
-				process.stdout.write(output);
+				process.stdout.write(output.join(""));
 				break;
 			case 4:
-				output = "";
+				output = [];
 				data = data.split(" ");
 				for (let j=0; j<data.length; j++) {
-					output += toBin(data[j]) + " ";
+					output.push(toBin(data[j]));
 				}
-				process.stdout.write(output);
+				process.stdout.write(output.join(" "));
 				break;
 			case 5:
-				output = "";
+				output = [];
 				data = data.split("");
 				for (let j=0; j<data.length; j++) {
-					output += toBin(data[j].charCodeAt(0)) + " ";
+					output.push(toBin(data[j].charCodeAt(0)));
 				}
-				process.stdout.write(output);
+				process.stdout.write(output.join(" "));
 				break;
 			case 6:
-				console.log("jdasfjkldjsakfeohgawgaesdgaerawgdg")
 				if (data in codeVars) {
-					process.stdout.write(codeVars[data]);
+					process.stdout.write(codeVars[data].toString());
 				} else {
 					process.stdout.write("Error: Undefined Variable, Line " + (i + 1));
 				}
+				break;
+			case 7:
+				// read+print file
+				break;
+			case 8:
+				data = data.split(" ");
+				codeVars[data[0]] = data.slice(1).join(" ");
+				break;
+			case 9:
+				output = [];
+				data = data.split(" ");
+				dataVar = data[0];
+				data = data.slice(1);
+				for (let j=0; j<data.length; j++) {
+					output.push(fromBin(data[j]));
+				}
+				codeVars[dataVar] = output.join(" ");
+				break;
+			case 10:
+				output = [];
+				data = data.split(" ");
+				dataVar = data[0];
+				data = data.slice(1);
+				for (let j=0; j<data.length; j++) {
+					output.push(String.fromCharCode(fromBin(data[j])));
+				}
+				codeVars[dataVar] = output.join("");
+				break;
+			case 11:
+				output = [];
+				data = data.split(" ");
+				dataVar = data[0];
+				data = data.slice(1);
+				for (let j=0; j<data.length; j++) {
+					output.push(toBin(data[j]));
+				}
+				codeVars[dataVar] = output.join(" ");
+				break;
+			case 12:
+				output = [];
+				data = data.split(" ");
+				dataVar = data[0];
+				data = data.join(" ").split("").slice(1);
+				for (let j=0; j<data.length; j++) {
+					output.push(toBin(data[j].charCodeAt(0)));
+				}
+				codeVars[dataVar] = output.join(" ");
 				break;
 			default:
 				process.stdout.write("Error: Unexpexted Instruction, Line " + (i + 1));
