@@ -24,15 +24,3 @@ function fromBin(x) {
 	}
 	return y;
 }
-
-function bitShift(x, left=false) {
-	x = x.toString().replace(/^0+/g, "").split("");
-	if (left) {
-		x.push(x.shift());
-	} else {
-		x.unshift(x.pop());
-	}
-	return x.join("");
-}
-
-console.log(fromBin(bitShift(toBin(11))))
