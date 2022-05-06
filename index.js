@@ -27,6 +27,7 @@ function fromBin(x) {
 
 function run(code=[]) {
 	codeLen = code.length;
+	let codeVars = {};
 	for (let i=0; i<codeLen; i++) {
 		code[i] = code[i].trim();
 		if (!code[i] || code[i].startsWith("~")) {
@@ -37,7 +38,7 @@ function run(code=[]) {
 		let output = "";
 		switch (instruction) {
 			case 1:
-				console.log(data);
+				process.stdout.write(data);
 				break;
 			case 2:
 				output = "";
@@ -45,7 +46,7 @@ function run(code=[]) {
 				for (let j=0; j<data.length; j++) {
 					output += fromBin(data[j]);
 				}
-				console.log(output);
+				process.stdout.write(output);
 				break;
 			case 3:
 				output = "";
@@ -53,16 +54,26 @@ function run(code=[]) {
 				for (let j=0; j<data.length; j++) {
 					output += String.fromCharCode(fromBin(data[j]));
 				}
-				console.log(output);
+				process.stdout.write(output);
 				break;
 			case 4:
 				output = "";
 				data = data.split(" ");
 				for (let j=0; j<data.length; j++) {
-					output += String.fromCharCode(fromBin(data[j]));
+					output += toBin(data[j]) + " ";
 				}
+				process.stdout.write(output);
+				break;
+			case 5:
+				output = "";
+				data = data.split("");
+				for (let j=0; j<data.length; j++) {
+					output += toBin(data[j].charCodeAt(0)) + " ";
+				}
+				process.stdout.write(output);
+				break;
 			default:
-				console.error("Error: Unexpexted Instruction, Line " + (i + 1));
+				process.stdout.write("Error: Unexpexted Instruction, Line " + (i + 1));
 		}
 	}
 }
