@@ -1,6 +1,6 @@
 ### For Replit.com Run Button vvv
 # Specify TrashBin (".tb") File After "run.sh"
-run="run.sh example.tb"
+# run="./run.sh example.tb"
 
 ### Or, To Skip run.sh vvv
-# run="node index.js example.tb"
+run="node index.js example.tb"
