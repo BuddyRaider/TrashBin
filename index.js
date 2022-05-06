@@ -33,17 +33,22 @@ function run(code=[]) {
 			continue;
 		}
 		let instruction = fromBin(code[i].split(" ")[0]);
+		let data = code[i].split(" ").slice(1).join(" ");
 		let output = "";
 		switch (instruction) {
 			case 1:
-				console.log(code[i].split(" ").slice(1).join(" "));
+				console.log(data);
 				break;
 			case 2:
-				output = fromBin(code[i].split(" ").slice(1).join(" "));
+				output = fromBin(data);
 				console.log(output);
 				break;
 			case 3:
-				output = new Buffer(code[i].split(" ").slice(1).join(" "), "binary").toString("uft8");
+				output = "";
+				data = data.split(" ");
+				for (let j=0; j<data.length; j++) {
+					output += String.fromCharCode(fromBin(data[j]));
+				}
 				console.log(output);
 				break;
 			default:
