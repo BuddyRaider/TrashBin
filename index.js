@@ -43,3 +43,4 @@ function run(code=[]) {
 	}
 }
 
+function main(file=process.argv[2])
