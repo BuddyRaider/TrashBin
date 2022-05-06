@@ -15,7 +15,7 @@ function toBin(x) {
 }
 
 function fromBin(x) {
-	x = x.toString().replace(/^0+/g, "");
+	x = x.toString().replace(/^0+/g, "").replace(" ", "");
 	let l = x.split("");
 	const lenL = l.length;
 	let y = 0;
@@ -24,3 +24,22 @@ function fromBin(x) {
 	}
 	return y;
 }
+
+function run(code=[]) {
+	codeLen = code.length;
+	for (let i=0; i<codeLen; i++) {
+		code[i] = code[i].trim();
+		if (!code[i]) {
+			continue;
+		}
+		let instruction = fromBin(code[i].split(" ")[0]);
+		switch (instruction) {
+			case 1:
+				console.log(code[i].split(" ").slice(1));
+				break;
+			default:
+				console.error("Error: Unexpexted Instruction, Line " + (i + 1));
+		}
+	}
+}
+
