@@ -1,6 +1,6 @@
-# TrashBin
+# TrashBin v1.0.1
 ***
-#### A Psuedo-Bytecode Programming Language By BuddyRaider
+#### A Psuedo-Machine-Code Programming Language By BuddyRaider
 ***
 ## Usage
 ###### *Requires Node.js*
